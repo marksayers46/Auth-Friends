@@ -9,16 +9,16 @@ function App() {
       <div className="App">
         <ul>
           <li>
-            <link to="/login">Login</link>
+            <Link to="/login">Login</Link>
           </li>
           <li>
             <Link to="/friends">Friends</Link>
           </li>
         </ul>
         <Switch>
-          <Route to="/friends" component={Friends} />
-          <Route path="/login" component={Login} />
-          <Route component={Login} />
+          <Route to="/friends" component="Component" />
+          <Route path="/login" component="Component" />
+          <Route component="Component" />
         </Switch>
       </div>
     </Router>
