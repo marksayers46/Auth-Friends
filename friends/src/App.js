@@ -1,7 +1,10 @@
-import React from 'react';
+import React from "react";
+import "./App.css";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
-import './App.css';
+import PrivateRoute from "./components/PrivateRoute";
+import Login from "./components/Login";
+import Friends from "./components/Friends";
 
 function App() {
   return (
@@ -12,13 +15,13 @@ function App() {
             <Link to="/login">Login</Link>
           </li>
           <li>
-            <Link to="/friends">Friends</Link>
+            <Link to="/friends">Friend List</Link>
           </li>
         </ul>
         <Switch>
-          <Route to="/friends" component="Component" />
-          <Route path="/login" component="Component" />
-          <Route component="Component" />
+          <PrivateRoute path="/friends" component={Friends} />
+          <Route path="/login" component={Login} />
+          <Route component={Login} />
         </Switch>
       </div>
     </Router>
